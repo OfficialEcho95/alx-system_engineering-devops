@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -da */
+ls -a ..
