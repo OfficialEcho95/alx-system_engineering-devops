@@ -1,0 +1,1 @@
+In task 19, the secret is to run the executable command 'chmod u+x filename' and the compile command file -C -m filename indepently and in this order, that is the main school.mgc file should only contain what it contains right now.
