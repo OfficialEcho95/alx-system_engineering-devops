@@ -3,7 +3,7 @@
 
 file=school
 
-if [[ test -e $file ]]
+if [[ -e $file ]]
 then
 	echo "$file file exists"
 	if [[ -s $file ]]
