@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# process status
+
+processes=$(ps -e -o pid,ppid,user,cmd --forest)
+
+echo "$processes"
