@@ -2,6 +2,7 @@ To design a three server web infrastructure that hosts the website www.foobar.co
 
 User's computer --> HTTP request--> DNS server --> DNS response--> Load balancer
 
+'''
 Load balancer:
 - HAproxy (Load balancer)
 
@@ -19,8 +20,9 @@ Server 2:
 
 Server 3:
 - MySQL Replica (Slave) node
+'''
 
-** Domain name:** '''foobar.com'''
+**Domain name:** 'foobar.com'
 DNS record: www CNAME 'foobar.com'
 
 The additional components are:
