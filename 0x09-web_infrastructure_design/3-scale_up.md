@@ -1,3 +1,6 @@
+![scale_up](https://user-images.githubusercontent.com/111706856/221423782-3bb8a7c4-c047-40c1-b6d2-e29cc8513aa7.JPG)
+
+
 # Scaled Up Web Infrastructure
 
 ## Description
