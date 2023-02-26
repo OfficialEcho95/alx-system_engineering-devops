@@ -1,4 +1,4 @@
-# Design of Three Server Web Infrastructure for '''www.foobar.com'''
+# Design of Three Server Web Infrastructure for www.foobar.com
 ## Description of Infrastructure:
 
 ## The proposed infrastructure includes the following components:
@@ -6,7 +6,7 @@
 **Three servers (web server, application server, and database server)** to distribute the workload and improve scalability and redundancy.
 **A Load Balancer** to manage the incoming traffic and distribute it to the appropriate servers.
 **Three firewalls** to protect the servers from unauthorized access and provide an additional layer of security.
-**An SSL certificate** to serve 'www.foobar.com' over HTTPS, which is encrypted traffic and prevents data theft and man-in-the-middle attacks.
+**An SSL certificate** to serve www.foobar.com over HTTPS, which is encrypted traffic and prevents data theft and man-in-the-middle attacks.
 **Three monitoring clients** to collect data and monitor the performance and health of the servers.
 Explanation for Each Component:
 
