@@ -1,3 +1,6 @@
+
+![2_servers_1_LB](https://user-images.githubusercontent.com/111706856/221423363-d2888e23-2b9f-4a7c-9c43-f0e93e436656.JPG)
+
 ### To design a three server web infrastructure that hosts the website www.foobar.com, we can add two additional servers to the original infrastructure, and use HAproxy as a load-balancer to distribute incoming traffic across the servers. The following is a design on the whiteboard:
 
 User's computer --> HTTP request--> DNS server --> DNS response--> Load balancer
