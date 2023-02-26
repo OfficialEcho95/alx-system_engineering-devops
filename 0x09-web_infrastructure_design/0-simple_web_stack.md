@@ -1,3 +1,7 @@
+
+![simple_server](https://user-images.githubusercontent.com/111706856/221423027-756c4050-04cf-4951-af70-c220bfadfdd1.JPG)
+
+
 Assume that a user opens their web browser and types in '''www.foobar.com'''.
 The DNS server that the user's computer is configured to use will receive the request to resolve the domain name www.foobar.com to an IP address. The DNS server will respond with the IP address '''8.8.8.8''', which is the IP address of the server hosting the website.
 
