@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
-# Configure Nginx so that its HTTP response contains a custom header
-# HTTP response contains a custom header (on web-01 and web-02)
-var=$(hostname)
-new_string="error_page 404 \/custom_404.html;\n location \/redirect_me {\n return 301 \$scheme:\/\/www.google.com;"
-new_string2="server {\n\tadd_header X-Served-By $var;"
+# configure the server with new and updated parameters
 
-apt-get update -y
+apt-get update -y && apt-get upgrade -y
 apt-get install nginx -y
-echo "Hello World!" > /usr/share/nginx/html/index.html
-mkdir -p /var/www/html
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sudo sed -i -E "s/^[^#]+location \/ \{/$new_string/" /etc/nginx/sites-available/default
-sudo sed -i -E "s/^server \{/$new_string2/" /etc/nginx/sites-available/default
-sudo service nginx start
+chown -R "$USER":"$USER" /var/www/html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+q='"'
+host=$(hostname)
+line3="\\\tadd_header X-Served-By $q$host$q;"
+sed -i "24i $line3" /etc/nginx/sites-available/default
+
+line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+sed -i "48i $line" /etc/nginx/sites-available/default
+
+mkdir -p /var/www/default
+echo "Ceci n'est pas une page" > /var/www/default/404.html
+line1="\\\tlocation = /404.html {\n\t\t root /var/www/default;\n\t}"
+sed -i "29i $line1" /etc/nginx/sites-available/default
+line2="\\\terror_page 404 /404.html;"
+sed -i "32i $line2" /etc/nginx/sites-available/default
+
+service nginx restart
