@@ -3,4 +3,4 @@
 # ~/.ssh/school with the user ubuntu
 
 # touch  ~/.ssh/school
-ssh -i ~/.ssh/school ubuntu@10.0.2.15
+ssh ubuntu@100.24.72.127 -i ~/.ssh/school
