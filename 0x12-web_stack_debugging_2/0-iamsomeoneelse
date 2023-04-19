@@ -10,4 +10,4 @@ fi
 username=$1
 
 # Run the whoami command under the specified user
-su $username -c "whoami"
+sudo -u "$username" whoami

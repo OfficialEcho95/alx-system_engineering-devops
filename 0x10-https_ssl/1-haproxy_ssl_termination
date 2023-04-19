@@ -46,4 +46,7 @@ backend web_backend
         balance roundrobin
         server web-01 54.157.143.37:80 check
         server web-02 34.202.157.136:80 check
+<<<<<<< HEAD
 
+=======
+>>>>>>> 249f5fdc09604ab5ee3f27de6df3f07aaa30c82c
