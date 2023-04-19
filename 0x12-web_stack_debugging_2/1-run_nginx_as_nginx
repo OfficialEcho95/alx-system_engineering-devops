@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+"""
+this module makes the nginx run as nginx user
+"""
 
 # Stop Nginx service if it's running
 sudo service nginx stop
