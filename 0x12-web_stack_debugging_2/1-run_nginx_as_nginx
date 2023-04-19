@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Update package lists
-sudo pt-get update
+sudo apt-get update
 
 # Install Nginx
 sudo apt-get install -y nginx
@@ -9,15 +9,21 @@ sudo apt-get install -y nginx
 # Stop Nginx service
 sudo service nginx stop
 
-# Configure Nginx to run as nginx user
-sudo sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
+# Change ownership of Nginx files and directories to nginx user
+sudo chown -R nginx:nginx /var/log/nginx
+sudo chown -R nginx:nginx /var/lib/nginx
+sudo chown -R nginx:nginx /etc/nginx
 
-# Change ownership of Nginx directories to nginx user
-chown -R nginx:nginx /var/www/html
-chown -R nginx:nginx /var/log/nginx
-
-# Configure Nginx to listen on all active IPs on port 8080
-sudo sed -i 's/listen 80;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
+# Modify Nginx configuration to run as nginx user
+sudo sed -i 's/user www-data;/user nginx;/g' /etc/nginx/nginx.conf
 
 # Start Nginx service
 sudo service nginx start
+
+sudo sed -i 's/listen\s*\(.*\)\s*;/listen 8080;/g' /etc/nginx/nginx.conf
+
+# Make Nginx listen on all active IPs on port 8080
+sudo sed -i 's/listen 80;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
+
+# Reload Nginx configuration
+sudo service nginx reload
