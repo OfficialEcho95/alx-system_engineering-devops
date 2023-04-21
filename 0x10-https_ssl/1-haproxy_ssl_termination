@@ -43,5 +43,5 @@ frontend web_frontend_secure
 
 backend web_backend
         balance roundrobin
-        server web-01 3.84.255.71:80 check
-        server web-02 54.236.48.24:80 check
+        server web-01 54.157.143.37:80 check
+        server web-02 34.202.157.136:80 check
