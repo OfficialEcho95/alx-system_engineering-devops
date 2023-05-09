@@ -14,11 +14,14 @@ def recurse(subreddit, hot_list=[], after=None):
     response = requests.get(url, headers=headers, params=params)
     if response.status_code == 404:
         return None
+
     data = response.json()
     posts = data["data"]["children"]
+
     for post in posts:
         hot_list.append(post["data"]["title"])
     after = data["data"]["after"]
+
     if after:
         recurse(subreddit, hot_list, after=after)
     return hot_list
