@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-"""
-a script that reboots the server without shutdown
-"""
+
+# a script that reboots the server without shutdown
+
 
 # Get the process ID (PID) of the Gunicorn master process
 PID=$(pgrep gunicorn)
