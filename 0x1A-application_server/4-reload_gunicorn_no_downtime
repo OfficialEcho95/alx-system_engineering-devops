@@ -1,6 +1,7 @@
 #!/bin/bash
-# Get the process ID (PID) of the Gunicorn master process
+# a bash script that restarts gunicorn without shutdown
 
+# Get the process ID (PID) of the Gunicorn master process
 PID=$(pgrep gunicorn)
 
 # Check if Gunicorn is running
@@ -12,12 +13,5 @@ fi
 # Send a signal to the master process to gracefully reload
 kill -HUP "$PID"
 
-# Wait for a short period to allow Gunicorn to restart
-sleep 2
+echo "Gunicorn reloaded gracefully."
 
-# Check if Gunicorn restarted successfully
-if pgrep -F /tmp/gunicorn.pid >/dev/null 2>&1; then
-    echo "Gunicorn restarted successfully."
-else
-    echo "Gunicorn failed to restart."
-fi
